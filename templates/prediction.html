@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Customer Churn Prediction App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+
+            html body {
+              /* background-color: rgb(206, 206, 228); */
+              /* background-color: rgb(104 108 115); */
+              height: 100vh !important;
+        
+              
+          }
+        
+          
+        </style>
+    </head>
+
+    
+    <body>
+        <center>
+        <div class="container" style="width:70%;margin:auto;border:1px solid black;padding:100px;background-color: rgba(0, 0, 0, 0.50);">
+            <div >
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                    {% if result %}
+                    <div class="alert alert-info alert-dismissible fade in">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Info!</strong> <h1>{{ result }}</h1>
+                      </div>
+                    {% endif %}
+                <h1>Will the customer churn ?</h1>
+                <form method="POST">
+                    <label style="font-size: 17px;color: white;">Credit Score</label>
+                    <br>
+                    <br>
+                    <input type="integer" style="border: 1px solid black;" class="form-control" placeholder="enter credict score (0-1000)" name="cr_score"/>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Country</label>
+                    <br>
+                    <br>
+                    <select name="country" id="country"  class="form-control">
+                        <option name="country" value="India">India</option>
+                        <option name="country" value="Canada">Canada</option>
+                        <option name="country" value="USA">USA</option>
+                    </select>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Gender</label>
+                    <br>
+                    <br>
+                    <select name="gender" id="gender"  class="form-control">
+                        <option name="gender" value="1">Male<option/>
+                        <option name="gender" value="0">Female<option/>
+                    </select>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Age</label>
+                    <br>
+                    <br>
+                    <input type="number" style="border: 1px solid black;" class="form-control" placeholder="enter Age" name="age"/>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Tenure</label>
+                    <br>
+                    <br>
+                    <input type="number" style="border: 1px solid black;" class="form-control" placeholder="enter teure(0-10)" name="tenure"/>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Balance</label>
+                    <br>
+                    <br>
+                    <input type="number" style="border: 1px solid black;" class="form-control" placeholder="enter  Balance" name="balance"/>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">No.Of.Products</label>
+                    <br>
+                    <br>
+                    <input type="number" style="border: 1px solid black;" class="form-control" placeholder="enter Products" name="no_of_products"/>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Has.Cr.Card</label>
+                    <br>
+                    <br>
+                    <input type="radio" name="cr_card" value="1">Yes</radio>
+                    <input type="radio" name="cr_card" value="0">No</radio>
+                    </input>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Is Active Member</label>
+                    <br>
+                    <br>
+                    <input type="radio" name="active_member" value="1">Yes</radio>
+                    <input type="radio" name="active_member" value="0">No</radio>
+                    </input>
+                    <br>
+                    <br>
+                    <label style="font-size: 17px;color: white;">Estimated Salary</label>
+                    <br>
+                    <br>
+                    <input type="number" style="border: 1px solid black;" class="form-control" placeholder="enter Salary" name="salary"/>
+                    <br>
+                    <br>
+                    <button type="submit" name="submit" id="submit_btn">Predict</button>
+                </form>
+                </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </center>
+    </body>
+</html>
+
